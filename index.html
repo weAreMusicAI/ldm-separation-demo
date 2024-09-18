@@ -4,16 +4,356 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Web demo for this paper</title>
+    <title>Web demo for Music.AI ICASSP 2025 paper</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <p>Research project done at</p>
+                <img src="images/MUSICAI_logo.jpg" alt="Logo 1" class="logo-1">
+            </div>
+            <div class="logo-container">
+                <p>with the collaboration of</p>
+                <img src="images/MTG_logo.png" alt="Logo 2" class="logo-2">
+            </div>
+        </div>
+    </header>
+
     <div class="container">
         <h1>Web demo for "A Latent Diffusion Model to Separate the Singing Voice from Music Mixtures"</h1>
+        <h3>Genís Plaja-Roglans, Yun-Ning Hung, Xavier Serra, Igor Pereira</h3>
+        <h4>This work was done during a research internship at Music.AI. Currently submitted to ICASSP 2025 and under review.<br> Please send the correspondence to: genis.plaja@upf.edu.</h4>
+
         <p>
-            This page includes audio examples and relevant plots for our work on separating the singing voice from 
-            music mixtures using latent diffusion models (LDM). This is currently work in progress.
+            <b>ABSTRACT:</b> Generative score-based diffusion models have emerged as a competitive solution for many audio problems. 
+            However, training and sampling with these models is computationally expensive and data- hungry, especially when generating 
+            waveforms. To alleviate this problem, latent diffusion was proposed: the system learns to generate samples encoded in a given 
+            latent space, and then decoded into the original domain. Latent diffusion for audio has shown promising performance, and great 
+            capacity to be conditioned using signals from diverse modalities like spectrograms or text prompts. We aim at exploring the 
+            generative power and efficiency of latent diffusion to separate the singing voice from music mixtures in a generative fashion, 
+            and present an alternative to mask-based systems. Despite being limited by the reconstruction loss of the latent encoder, our 
+            system can be trained using only open data. It perceptually improves over existing generative separation systems and levels 
+            regressive models in the literature on speech synthesis metrics and interference removal. Code and audio examples are available.
         </p>
+        
+        <p>
+            <b>What is this page about:</b> This page includes audio examples and other interesting resources for our work on separating the singing voice from 
+            music mixtures using latent diffusion models (LDM), which is a novel form of denoising diffusion probabilistic models (DDPM).
+            We provide audio examples comparing our method with models in the literature.
+        </p>
+
+        <p>
+            *please note all audio examples are randomly extracted from the
+            <a href="https://sigsep.github.io/datasets/musdb.html#musdb18-hq-uncompressed-wav">MUSDB18HQ test set</a> , 
+                and are the examples used for the perceptual experiment.
+        </p>
+
+        <!-- Horizontal Line -->
+        <p><br></p>
+        <p><br></p>
+        <hr class="thick-line">
+
+        <!-- SECTION 1 -->
+        <!-- SECTION 1 -->
+        <!-- SECTION 1 -->
+        <!-- SECTION 1 -->
+
+        <h2>Comparing our system with models in the literature</h2>
+        <!-- SECTION 1 -->
+        <!-- SECTION 1 -->
+        <!-- SECTION 1 -->
+        <!-- SECTION 1 -->
+
+        <!-- Example 1 -->
+        <section class="audio-example-1">
+            <div class="audio-row">
+                <div class="audio-column">
+                    <h3>Mix</h3>
+                    <audio controls>
+                        <source src="audio/mixture_1.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="audio-column">
+                    <h3>Target Vocals</h3>
+                    <audio controls>
+                        <source src="audio/vocals_1.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="audio-row">
+                <div class="audio-column">
+                    <h3>LDM-dmx</h3>
+                    <audio controls>
+                        <source src="audio/ours_ex1.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="audio-column">
+                    <h3>BS-RNN Estimation</h3>
+                    <audio controls>
+                        <source src="audio/bs_rnn_ex1.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="audio-column">
+                    <h3>HT-Demucs Estimation</h3>
+                    <audio controls>
+                        <source src="audio/h_demucs_ex1.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="audio-column">
+                    <h3>MSDM Estimation</h3>
+                    <audio controls>
+                        <source src="audio/msdm_ex1.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </section>
+
+        <!-- Example 2 -->
+        <section class="audio-example-2">
+            <div class="audio-row">
+                <div class="audio-column">
+                    <h3>Mix</h3>
+                    <audio controls>
+                        <source src="audio/mixture_2.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="audio-column">
+                    <h3>Target Vocals</h3>
+                    <audio controls>
+                        <source src="audio/vocals_2.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="audio-row">
+                <div class="audio-column">
+                    <h3>LDM-dmx</h3>
+                    <audio controls>
+                        <source src="audio/ours_ex2.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="audio-column">
+                    <h3>BS-RNN Estimation</h3>
+                    <audio controls>
+                        <source src="audio/bs_rnn_ex2.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="audio-column">
+                    <h3>HT-Demucs Estimation</h3>
+                    <audio controls>
+                        <source src="audio/h_demucs_ex2.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="audio-column">
+                    <h3>MSDM Estimation</h3>
+                    <audio controls>
+                        <source src="audio/msdm_ex2.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </section>
+
+        <!-- Example 3 -->
+        <section class="audio-example-3">
+            <div class="audio-row">
+                <div class="audio-column">
+                    <h3>Mix</h3>
+                    <audio controls>
+                        <source src="audio/mixture_3.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="audio-column">
+                    <h3>Target Vocals</h3>
+                    <audio controls>
+                        <source src="audio/vocals_3.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="audio-row">
+                <div class="audio-column">
+                    <h3>LDM-dmx</h3>
+                    <audio controls>
+                        <source src="audio/ours_ex3.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="audio-column">
+                    <h3>BS-RNN Estimation</h3>
+                    <audio controls>
+                        <source src="audio/bs_rnn_ex3.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="audio-column">
+                    <h3>HT-Demucs Estimation</h3>
+                    <audio controls>
+                        <source src="audio/h_demucs_ex3.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="audio-column">
+                    <h3>MSDM Estimation</h3>
+                    <audio controls>
+                        <source src="audio/msdm_ex3.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </section>
+
+        <!-- Example 4 -->
+        <section class="audio-example-4">
+            <div class="audio-row">
+                <div class="audio-column">
+                    <h3>Mix</h3>
+                    <audio controls>
+                        <source src="audio/mixture_4.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="audio-column">
+                    <h3>Target Vocals</h3>
+                    <audio controls>
+                        <source src="audio/vocals_4.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="audio-row">
+                <div class="audio-column">
+                    <h3>LDM-dmx</h3>
+                    <audio controls>
+                        <source src="audio/ours_ex4.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="audio-column">
+                    <h3>BS-RNN Estimation</h3>
+                    <audio controls>
+                        <source src="audio/bs_rnn_ex4.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="audio-column">
+                    <h3>HT-Demucs Estimation</h3>
+                    <audio controls>
+                        <source src="audio/h_demucs_ex4.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="audio-column">
+                    <h3>MSDM Estimation</h3>
+                    <audio controls>
+                        <source src="audio/msdm_ex4.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </section>
+
+        <!-- Example 5 -->
+        <section class="audio-example-5">
+            <div class="audio-row">
+                <div class="audio-column">
+                    <h3>Mix</h3>
+                    <audio controls>
+                        <source src="audio/mixture_5.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="audio-column">
+                    <h3>Target Vocals</h3>
+                    <audio controls>
+                        <source src="audio/vocals_5.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div class="audio-row">
+                <div class="audio-column">
+                    <h3>LDM-dmx</h3>
+                    <audio controls>
+                        <source src="audio/ours_ex5.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="audio-column">
+                    <h3>BS-RNN Estimation</h3>
+                    <audio controls>
+                        <source src="audio/bs_rnn_ex5.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="audio-column">
+                    <h3>HT-Demucs Estimation</h3>
+                    <audio controls>
+                        <source src="audio/h_demucs_ex5.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="audio-column">
+                    <h3>MSDM Estimation</h3>
+                    <audio controls>
+                        <source src="audio/msdm_ex5.wav" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Horizontal Line -->
+        <p><br></p>
+        <p><br></p>
+        <hr class="thick-line">
+
+        <h2>Reproducing the results of our work</h2>
+        <p>
+            Along the diffdmx Python package we have built at Music.AI we implemented several modules to build, train, and run inference with the proposed system.
+            See an example of the configuration file that would build the proposed model. All invoked modules are already implemented in the package.
+            However, new modules, codecs, or architectures can be added to the package and used in the experiments through the Hydra config to extend 
+            the research. The code will be made public after review.
+        </p>
+
+        <div class="code-block">
+            <pre><code class="yaml">
+            sample_rate: 44100
+            model:
+                latent_interface:
+                    _target_: diffdmx.latents.EncodecInterface
+                    encodec_kwargs:
+                        overlap: null
+                        segment: null
+                    beta: 0.15
+                    freeze: true
+            
+                conditioner:
+                    _target_: diffdmx.conditioners.encodec.EncodecInjectChannels
+                    context_channels: ${model.diffusion.context_channels}
+                    
+                diffusion:
+                    _target_: diffdmx.audio_diffusion_pytorch.DiffusionModel
+                    net_t:
+                        _target_: diffdmx.utils.get_hook
+                        import_path: diffdmx.audio_diffusion_pytorch.UNetV0
+            
+                    dim: 1
+                    in_channels: 128
+                    out_channels: 128
+                    channels: [128, 128, 256, 256, 512, 512, 1024]
+                    context_channels: [0, 0, 0, 256, 512, 512, 1024] 
+                    factors: [1, 1, 2, 2, 2, 2, 2]
+                    items: [1, 1, 2, 2, 2, 2, 2]
+                    attentions: [0, 0, 0, 0, 1, 1, 1]
+                    attention_heads: 8
+                    attention_features: 64
+                    inject_system: concatenation
+                    sample_rate: ${sample_rate}
+                optimizer:
+                    _target_: torch.optim.AdamW
+                    lr: 2.e-4
+            </code></pre>
+        </div>
+
+        <p>
+            Users may create their own conditioners or generator networks in the package code, and summon them
+            using the config files. The package is designed to be modular and easy to extend.
+            Then, the code is executed through the command line:
+        </p>
+
+        <div class="code-block">
+            <pre><code class="bash">
+            python -m diffdmx.train +experiment=path/to/config/file
+            </code></pre>
+
     </div>
 </body>
 </html>
