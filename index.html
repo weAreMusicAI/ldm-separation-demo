@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Web demo for Music.AI ICASSP 2025 paper</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -26,11 +27,14 @@
     <div class="container">
         <h1>Web demo for "A Latent Diffusion Model to Separate the Singing Voice from Music Mixtures"</h1>
         <h3>Genís Plaja-Roglans, Yun-Ning Hung, Xavier Serra, Igor Pereira</h3>
-        <h4>This work was done during a research internship at Music.AI. Currently submitted to ICASSP 2025 and under review.<br> Please send the correspondence to: genis.plaja@upf.edu.</h4>
+        <h4>
+            This work was done during a research internship at Music.AI. Currently submitted to ICASSP 2025 and under review.<br>
+            Please send the correspondence to: genis.plaja@upf.edu.
+        </h4>
 
         <p>
-            <b>ABSTRACT:</b> Generative score-based diffusion models have emerged as a competitive solution for many audio problems. 
-            However, training and sampling with these models is computationally expensive and data- hungry, especially when generating 
+            <b>Abstract:</b> Generative score-based diffusion models have emerged as a competitive solution for many audio problems. 
+            However, training and sampling with these models is computationally expensive and data-hungry, especially when generating 
             waveforms. To alleviate this problem, latent diffusion was proposed: the system learns to generate samples encoded in a given 
             latent space, and then decoded into the original domain. Latent diffusion for audio has shown promising performance, and great 
             capacity to be conditioned using signals from diverse modalities like spectrograms or text prompts. We aim at exploring the 
@@ -41,15 +45,14 @@
         </p>
         
         <p>
-            <b>What is this page about:</b> This page includes audio examples and other interesting resources for our work on separating the singing voice from 
+            <b>What is this page about:</b> This page includes audio and code examples of our work on separating the singing voice from 
             music mixtures using latent diffusion models (LDM), which is a novel form of denoising diffusion probabilistic models (DDPM).
-            We provide audio examples comparing our method with models in the literature.
         </p>
 
         <p>
-            *please note all audio examples are randomly extracted from the
-            <a href="https://sigsep.github.io/datasets/musdb.html#musdb18-hq-uncompressed-wav">MUSDB18HQ test set</a> , 
-                and are the examples used for the perceptual experiment.
+            <b>Note:</b> all audio examples in this demo are randomly sampled from the
+            <a href="https://sigsep.github.io/datasets/musdb.html#musdb18-hq-uncompressed-wav">MUSDB18HQ test set</a>, 
+                and used for the perceptual experiment in the paper.
         </p>
 
         <!-- Horizontal Line -->
@@ -297,10 +300,14 @@
 
         <h2>Reproducing the results of our work</h2>
         <p>
-            Along the diffdmx Python package we have built at Music.AI we implemented several modules to build, train, and run inference with the proposed system.
-            See an example of the configuration file that would build the proposed model. All invoked modules are already implemented in the package.
-            However, new modules, codecs, or architectures can be added to the package and used in the experiments through the Hydra config to extend 
-            the research. The code will be made public after review.
+            As part of the diffdmx Python package that we have built at Music.AI, we implemented several modules to build, train, and run inference 
+            with LDM for the task of music source separation. See below an example of the Hydra-styled configuration file that would build the proposed 
+            model. All invoked modules are implemented in the package. However, new modules and latent encoders can be added to the package and used in 
+            the experiments through the Hydra configuration to extend the research. 
+            
+            <br><br>
+            The implemented functions and configuration files will be made available
+            after the review process.
         </p>
 
         <div class="code-block">
@@ -344,16 +351,31 @@
         </div>
 
         <p>
-            Users may create their own conditioners or generator networks in the package code, and summon them
-            using the config files. The package is designed to be modular and easy to extend.
-            Then, the code is executed through the command line:
+            Note also that after preparing the configuration files, users can easily run training through the command line:
         </p>
 
         <div class="code-block">
             <pre><code class="bash">
             python -m diffdmx.train +experiment=path/to/config/file
-            </code></pre>
+            </code></pre>       
+        </div>
 
-    </div>
+        <p>
+            Finally, running inference is also straightforward:
+        </p>
+
+        <div class="code-block">
+            <pre><code class="bash">
+            python -m diffdmx.inference +experiment=path/to/config/file
+            </code></pre>       
+        </div>
+
+        <p>
+            Useys may indicate in the inference configuration file which specific model should be loaded and run, as well as the sampling parameters. 
+            Inference can be run in a single file or in batches of files. The package also includes a module to evaluate the performance of the model.
+        </p>
+    <footer>
+        <p>This is a research project done at Music.AI</p>
+    </footer>
 </body>
 </html>

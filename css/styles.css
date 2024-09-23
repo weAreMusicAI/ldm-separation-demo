@@ -18,12 +18,12 @@ header {
 }
 
 .logo-1 {
-    max-width: 250px; /* Adjust to fit your logos */
+    max-width: 250px;
     height: auto;
 }
 
 .logo-2 {
-    max-width: 212px; /* Adjust to fit your logos */
+    max-width: 212px;
     height: auto;
 }
 
@@ -86,21 +86,27 @@ hr.thick-line {
     margin: 20px 0;
 }
 
-/* Estilos para el bloque <pre> */
 pre {
-    background-color: #2d2d2d; /* Fondo oscuro */
-    color: #f8f8f2; /* Texto blanco */
+    background-color: #2d2d2d;
+    color: #f8f8f2;
     padding: 15px;
     border-radius: 8px;
-    overflow-x: auto; /* Scroll horizontal si el código es muy largo */
+    overflow-x: auto;
     font-size: 14px;
     line-height: 1.5;
     margin-bottom: 20px;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
 }
 
 .code-block {
@@ -111,20 +117,28 @@ body {
     border: 1px solid #ccc;
 }
 
-pre {
-    margin: 0;
-    font-family: 'Courier New', Courier, monospace;
-}
-
 code.yaml {
-    color: #2d5dbd;  /* Azul para llaves */
+    color: #2d5dbd;
 }
 
 code.yaml .string {
-    color: #d14;  /* Color para strings */
+    color: #d14;
 }
 
 code.yaml .number {
-    color: #098658;  /* Verde para números */
+    color: #098658;
 }
+
+footer {
+    background-color: #3c00ffca;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
 
